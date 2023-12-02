@@ -1,11 +1,14 @@
+import {HTML5Backend} from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
+
 
 function App() {
   return (
+    <DndProvider backend={HTML5Backend}>
     <div>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Board/>
     </div>
+    </DndProvider>
   );
 }
 
