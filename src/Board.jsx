@@ -1,11 +1,20 @@
 import React from 'react';
+import SquareBoard from './SquareBoard';
+import Square from './Square';
 
-function Board() {
+const Board = ({ Board }) => {
+  //console/log("boarad", board.flat())
   return (
     <div>
-      Board
+      {
+        Board.flat().map((brd, i) => (
+          <Square>
+            {brd && <SquareBoard brd={brd} />}
+          </Square>
+        ))
+      }
     </div>
   );
 }
 
-export default Board;
+export default Board

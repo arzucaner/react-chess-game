@@ -15,7 +15,7 @@ function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div>
-        <Board />
+        <Board board={board}/>
       </div>
     </DndProvider>
   );
