@@ -3,12 +3,20 @@ import SquareBoard from './SquareBoard';
 import Square from './Square';
 
 const Board = ({ Board }) => {
-  //console/log("boarad", board.flat())
+  //console/log("board", board.flat())
+
+  const colorCntrl = (i) => {
+    const x = i % 8;
+    const y = Math.abs(Math.floor(i / 8) - 7)
+    return (x + y) % 2 === 0
+  }
+
+
   return (
-    <div>
+    <div className='w-[640px] h-[640px]bg-red-700 flex-wrap'>
       {
         Board.flat().map((brd, i) => (
-          <Square>
+          <Square colorValue={colorCntrl(i)}>
             {brd && <SquareBoard brd={brd} />}
           </Square>
         ))

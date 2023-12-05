@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Square = ({ children }) => {
+const Square = ({ children, colorValue }) => {
+  console.log(colorValue, "colorValue")
   return (
-    <div>
-      {children}
-    </div>
-  );
+    <div className={`${colorValue ? 'bg-terracotta' : 'bg-light-terracotta'} w-[80] h-[80px] flex items-center cursor-grab justify-center`}>{children}</div>
+  )
 }
 
-export default Square;
+export default Square
