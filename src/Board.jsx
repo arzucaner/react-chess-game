@@ -8,12 +8,12 @@ const Board = ({ Board }) => {
   const colorCntrl = (i) => {
     const x = i % 8;
     const y = Math.abs(Math.floor(i / 8) - 7)
-    return (x + y) % 2 === 0
+    return (x + y) % 2 === 0;
   }
 
 
   return (
-    <div className='w-[640px] h-[640px]bg-red-700 flex-wrap'>
+    <div className='w-[640px] h-[640px] bg-terracotta flex-wrap'>
       {
         Board.flat().map((brd, i) => (
           <Square colorValue={colorCntrl(i)}>
