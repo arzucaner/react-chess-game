@@ -8,7 +8,15 @@ const Board = ({ Board }) => {
   const colorCntrl = (i) => {
     const x = i % 8;
     const y = Math.abs(Math.floor(i / 8) - 7)
-    return (x + y) % 2 === 0;
+    return (x + y) % 2 === 0
+  }
+
+  const positionCntrl = (i) => {
+    const x = i % 8;
+    const letters = ["a", "b", "c", "d", "e", "f", "g", "h"][x]
+    const y = Math.abs(Math.floor(i / 8) - 7)
+    retuen`${letters}${y + 1}`
+
   }
 
 
@@ -16,7 +24,7 @@ const Board = ({ Board }) => {
     <div className='w-[640px] h-[640px] bg-terracotta flex-wrap'>
       {
         Board.flat().map((brd, i) => (
-          <Square colorValue={colorCntrl(i)}>
+          <Square colorValue={colorCntrl(i)} positionCntrl={positionCntrl(i)}>
             {brd && <SquareBoard brd={brd} />}
           </Square>
         ))
