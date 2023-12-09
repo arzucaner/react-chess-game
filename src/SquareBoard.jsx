@@ -2,15 +2,15 @@ import React from 'react';
 import { useDrag } from 'react-dnd';
 import { DragPreviewImage, useDrag } from 'react-dnd';
 
-const SquareBoard = ({ brd }) => {
+const SquareBoard = ({ brd, positionCntrl }) => {
   const [{ isDragging }, drag, preview] = useDrag({
     type: 'chess',
-    item: { id: `${brd.type}_${brd.color}` },
+    item: { id: `${positionCntrl}_${brd.type}_${brd.color}` },
     collect: (monitor) => {
       return { isDragging: !!monitor.isDragging }
     }
   })
-  
+
   const pieceImage = require(`../public/assets/images/${brd.type}_${brd.color}.png`)
   console.log("brd", brd);
   return (

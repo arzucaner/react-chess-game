@@ -23,14 +23,14 @@ const Board = ({ Board }) => {
   return (
     <div className='w-[640px] h-[640px] bg-terracotta flex-wrap'>
       {
-        Board.flat().map((brd, i) => (
+        board.flat().map((brd, i) => (
           <Square colorValue={colorCntrl(i)} positionCntrl={positionCntrl(i)}>
-            {brd && <SquareBoard brd={brd} />}
+            {brd && <SquareBoard brd={brd} positionCntrl={positionCntrl(i)} />}
           </Square>
         ))
       }
     </div>
-  );
+  )
 }
 
 export default Board
