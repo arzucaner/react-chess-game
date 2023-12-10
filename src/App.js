@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 function App() {
   const [board, setBoard] = useState([]);
   useEffect(() => {
+    initGame()
     const subscribe = subjectGame.subscribe(sub => setBoard(sub.chess))
 
     return () => subscribe.unsubscribe();

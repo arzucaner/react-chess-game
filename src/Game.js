@@ -3,11 +3,16 @@ import { BehaviorSubject } from 'rxjs'
 
 const chess = new Chess();
 
-const subjectGame = new BehaviorSubject({
-    chess: chess.board()
-})
+const subjectGame = new BehaviorSubject()
 
 export default subjectGame
+
+export const initGame = () => {
+    updateGame();
+}
+export const resetGame = () => {
+    chess.reset();
+}
 
 export const move = (from, to) => {
     console.log(from, to);
@@ -18,7 +23,19 @@ export const move = (from, to) => {
 }
 
 const updateGame = () => {
-    subjectGame.next({ chess: chess.board() })
+    const isGameOver = chess.isGameOver();
+    subjectGame.next({ chess: chess.board(), isGameOver, })
 }
+
+const getGameResult = () => {
+    if (chess.isCheckmate()) {
+        const winner = chess.turn() === 'w' ? 'Black' : 'White';
+        return `CHECKMATE - Winner : ${winner}`
+
+    }
+}
+
+
+
 
 
