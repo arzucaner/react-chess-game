@@ -26,8 +26,9 @@ function App() {
 
       <div className='bg-terracotta h-screen flex items-center justify-center relative'>
         {
-          isGameOver && <div className='absolute bg-white bg-opacity-80 rounded-lg p-3'>
-            <h1>GAME OVER!!!</h1>
+          isGameOver && <div className='absolute bg-white bg-opacity-80 rounded-lg p-3 flex flex-colitems-center justify-center'>
+            <h1 className='font-bold'>GAME OVER!!!</h1>
+            {result && <div>{result}</div>}
           </div>
         }
         <Board board={board} />
