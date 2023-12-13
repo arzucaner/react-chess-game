@@ -2,7 +2,7 @@ import React from 'react';
 import SquareBoard from './SquareBoard';
 import Square from './Square';
 
-const Board = ({ Board }) => {
+const Board = ({ board }) => {
   //console/log("board", board.flat())
 
   const colorCntrl = (i) => {
@@ -15,7 +15,7 @@ const Board = ({ Board }) => {
     const x = i % 8;
     const letters = ["a", "b", "c", "d", "e", "f", "g", "h"][x]
     const y = Math.abs(Math.floor(i / 8) - 7)
-    retuen`${letters}${y + 1}`
+    return`${letters}${y + 1}`
 
   }
 

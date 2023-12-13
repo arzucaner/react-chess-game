@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDrag } from 'react-dnd';
 import { DragPreviewImage, useDrag } from 'react-dnd';
 
 const SquareBoard = ({ brd, positionCntrl }) => {
@@ -11,6 +10,8 @@ const SquareBoard = ({ brd, positionCntrl }) => {
     }
   })
 
+  // eslint-disable-next-line no-unused-vars
+
   const pieceImage = require(`../public/assets/images/${brd.type}_${brd.color}.png`)
   console.log("brd", brd);
   return (
@@ -18,7 +19,7 @@ const SquareBoard = ({ brd, positionCntrl }) => {
       <DragPreviewImage src={pieceImage} connect={preview} />
       <img className='w-[40px]' src={pieceImage} alt="" />
     </div>
-  )
-}
+  );
+};
 
-export default SquareBoard
+export default SquareBoard;
