@@ -15,7 +15,9 @@ const Square = ({ children, colorValue, positionCntrl }) => {
   })
 
   return (
-    <div ref={drop} className={`${colorValue ? 'bg-terracotta' : 'bg-light-terracotta'} w-[80] h-[80px] flex items-center cursor-grab justify-center`}>{children}</div>
+    <div ref={drop} className={`${colorValue ? 'bg-red-800' : 'bg-green-200'} w-80 h-80px flex items-center cursor-grabbing justify-center`}>
+      {children}
+      </div>
   )
 }
 

@@ -24,7 +24,7 @@ export const move = (from, to) => {
 
 const updateGame = () => {
     const isGameOver = chess.isGameOver();
-    subjectGame.next({ chess: chess.board(), isGameOver, result: isGameOver ? getGameResult() : null})
+    subjectGame.next({ chess: chess.board(), isGameOver, result: isGameOver ? getGameResult() : null })
 }
 
 const getGameResult = () => {
@@ -33,7 +33,7 @@ const getGameResult = () => {
         return `CHECKMATE - Winner : ${winner}`
     } else if (chess.isDraw()) {
         let reason = "50 Move Rule";
-        if (chess.isStalemate) {
+        if (chess.isStalemate()) {
             reason = 'infinite loop'
         } else if (chess.isThreefoldRepetition()) {
             reason = 'Repetition'

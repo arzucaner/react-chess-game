@@ -5,6 +5,8 @@ import subjectGame, { initGame } from './Game';
 import { useEffect, useState } from 'react';
 
 
+
+
 function App() {
   const [board, setBoard] = useState([]);
   const [isGameOver, setIsGameOver] = useState();
@@ -23,10 +25,10 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-
-      <div className='bg-terracotta h-screen flex items-center justify-center relative'>
+      
+      <div className='bg-black h-screen flex items-center justify-center relative'>
         {
-          isGameOver && <div className='absolute bg-white bg-opacity-80 rounded-lg p-3 flex flex-colitems-center justify-center'>
+          isGameOver && <div className='absolute bg-white bg-opacity-80 rounded-lg p-3 flex flex-col items-center justify-center'>
             <h1 className='font-bold'>GAME OVER!!!</h1>
             {result && <div>{result}</div>}
           </div>

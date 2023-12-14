@@ -3,7 +3,7 @@ import SquareBoard from './SquareBoard';
 import Square from './Square';
 
 const Board = ({ board }) => {
-  //console/log("board", board.flat())
+  //console.log("board", board.flat())
 
   const colorCntrl = (i) => {
     const x = i % 8;
@@ -21,12 +21,14 @@ const Board = ({ board }) => {
 
 
   return (
-    <div className='w-[640px] h-[640px] bg-terracotta flex-wrap'>
+    <div className='w-[640px] h-[640px] bg-red-700 flex-wrap'>
       {
         board.flat().map((brd, i) => (
+          <div key={i}>
           <Square colorValue={colorCntrl(i)} positionCntrl={positionCntrl(i)}>
             {brd && <SquareBoard brd={brd} positionCntrl={positionCntrl(i)} />}
           </Square>
+          </div>
         ))
       }
     </div>
