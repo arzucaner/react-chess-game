@@ -1,12 +1,13 @@
 import React from 'react';
 import { DragPreviewImage, useDrag } from 'react-dnd';
 
+
 const SquareBoard = ({ brd, positionCntrl }) => {
   const [{ isDragging }, drag, preview] = useDrag({
     type: 'chess',
     item: { id: `${positionCntrl}_${brd.type}_${brd.color}` },
-    collect: (monitor) => {
-      return { isDragging: !!monitor.isDragging };
+    collect : (monitor) => {
+      return { isDragging : !!monitor.isDragging };
     },
   });
 
@@ -17,7 +18,7 @@ const SquareBoard = ({ brd, positionCntrl }) => {
   return (
     <div ref={drag}>
       <DragPreviewImage src={pieceImage} connect={preview} />
-      <img className='w-40px' src={pieceImage} alt="" />
+      <img className='w-[40px]' src={pieceImage} alt="" />
     </div>
   );
 };

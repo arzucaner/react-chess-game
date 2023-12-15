@@ -4,9 +4,6 @@ import Board from './Board';
 import subjectGame, { initGame } from './Game';
 import { useEffect, useState } from 'react';
 
-
-
-
 function App() {
   const [board, setBoard] = useState([]);
   const [isGameOver, setIsGameOver] = useState();

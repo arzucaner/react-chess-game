@@ -2,6 +2,7 @@ import React from 'react';
 import SquareBoard from './SquareBoard';
 import Square from './Square';
 
+
 const Board = ({ board }) => {
   //console.log("board", board.flat())
 
@@ -15,23 +16,20 @@ const Board = ({ board }) => {
     const x = i % 8;
     const letters = ["a", "b", "c", "d", "e", "f", "g", "h"][x]
     const y = Math.abs(Math.floor(i / 8) - 7)
-    return`${letters}${y + 1}`
+    return `${letters}${y + 1}`
 
   }
 
-
   return (
-    <div className='w-[640px] h-[640px] bg-red-700 flex-wrap'>
+    <div className='w-[640px] h-[640px] bg-green-700 flex-wrap'>
       {
         board.flat().map((brd, i) => (
-          <div key={i}>
           <Square colorValue={colorCntrl(i)} positionCntrl={positionCntrl(i)}>
             {brd && <SquareBoard brd={brd} positionCntrl={positionCntrl(i)} />}
           </Square>
-          </div>
         ))
       }
-    </div>
+    </div >
   )
 }
 
