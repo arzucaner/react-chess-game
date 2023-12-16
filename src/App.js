@@ -26,7 +26,7 @@ function App() {
       <div className='bg-black h-screen flex items-center justify-center relative'>
         {
           isGameOver && <div className='absolute bg-white bg-opacity-80 rounded-lg p-3 flex flex-col items-center justify-center'>
-            <h1 className='font-bold'>GAME OVER!!!</h1>
+            <h1 className='font-bold'>GAME OVER!CONGRATULATIONS🎉 </h1>
             {result && <div>{result}</div>}
           </div>
         }
