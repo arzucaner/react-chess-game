@@ -2,6 +2,9 @@
 
 This project was developed within the framework of the Christmas Coding Challenge 2023, organized by Who Women Code London. Dive into the world of React Chess Game,  a digital battleground where strategic moves meet online competition. Challenge friends or make new opponents worldwide, and let the games begin!
 
+
+![1702846327770](image/README/1702846327770.png)
+
 ## Features
 
 

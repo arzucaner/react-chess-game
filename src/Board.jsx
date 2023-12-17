@@ -3,6 +3,7 @@ import SquareBoard from './SquareBoard';
 import Square from './Square';
 
 
+
 const Board = ({ board }) => {
   //console.log("board", board.flat())
 
@@ -21,7 +22,7 @@ const Board = ({ board }) => {
   }
 
   return (
-    <div className='w-[640px] h-[640px] bg-green-700 flex-wrap'>
+    <div className='w-[640px] h-[640px] bg-red-700 flex flex-wrap'>
       {
         board.flat().map((brd, i) => (
           <Square colorValue={colorCntrl(i)} positionCntrl={positionCntrl(i)}>
