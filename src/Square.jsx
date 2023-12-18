@@ -2,6 +2,8 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import subjectGame, { initGame, resetGame, move } from './Game';
 
+
+
 const Square = ({ children, colorValue, positionCntrl }) => {
   console.log(positionCntrl, "positionCntrl")
   const [, drop] = useDrop({

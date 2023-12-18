@@ -1,11 +1,13 @@
-import  { Chess } from 'chess.js';
+import React, { useState, useEffect } from 'react';
+import { Chess } from 'chess.js';
 import { BehaviorSubject } from 'rxjs';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+
+
 
 const chess = new Chess();
 
 const subjectGame = new BehaviorSubject()
-
-export default subjectGame
 
 export const initGame = () => {
     updateGame();
@@ -25,7 +27,17 @@ export const move = (from, to) => {
 const updateGame = () => {
     const isGameOver = chess.isGameOver();
     subjectGame.next({ chess: chess.board(), isGameOver, result: isGameOver ? getGameResult() : null })
-}
+    if (isGameOver) {
+        subjectGame.complete();
+    }
+};
+
+const calculateProgress = () => {
+    const totalMoves = chess.history().length;
+    const maxMoves = 50;
+    const progress = Math.min((totalMoves / maxMoves) * 100, 100);
+    return progress;
+};
 
 const getGameResult = () => {
     if (chess.isCheckmate()) {
@@ -45,6 +57,28 @@ const getGameResult = () => {
         return 'Unknown Situation'
     }
 }
+const ChessGame = () => {
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const subscription = subjectGame.subscribe((game) => {
+            setProgress(game.progress);
+        });
+
+        return () => {
+            subscription.unsubscribe();
+        };
+    }, []);
+
+    return (
+        <div>
+            <ProgressBar now={progress} label={`${progress}%`} />
+        </div>
+    );
+};
+
+export { subjectGame, ChessGame };
+
 
 
 

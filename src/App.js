@@ -3,6 +3,10 @@ import { DndProvider } from 'react-dnd';
 import Board from './Board';
 import subjectGame, { initGame } from './Game';
 import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import subjectGame from './Game';
+
+
 
 function App() {
   const [board, setBoard] = useState([]);
