@@ -16,9 +16,9 @@ export const resetGame = () => {
     chess.reset();
 }
 
-export const move = (from, to) => {
-    console.log(from, to);
-    const moveOperation = chess.move({ from, to })
+export const move = (from, to, promotion = undefined) => {
+    console.log(from, to, promotion);
+    const moveOperation = chess.move({ from, to, promotion });
     if (moveOperation) {
         updateGame();
     }
