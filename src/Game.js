@@ -57,6 +57,8 @@ const getGameResult = () => {
         return 'Unknown Situation'
     }
 }
+
+
 const ChessGame = () => {
     const [progress, setProgress] = useState(0);
 
@@ -76,6 +78,7 @@ const ChessGame = () => {
         </div>
     );
 };
+
 
 export { subjectGame, ChessGame };
 
