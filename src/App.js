@@ -1,10 +1,13 @@
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import Board from './Board';
-import subjectGame, { initGame } from './Game';
+import { subjectGame, ChessGame, initGame } from './Game';
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Chessboard from './Chessboard';
 
+
+var board1 = Chessboard('board1', 'start')
 function App() {
   const [board, setBoard] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -46,6 +49,8 @@ function App() {
         {!isLoading && !isGameOver && (
           <button onClick={handleStartGame}>Start New Game</button>
         )}
+        <ChessGame />
+        <Chessboard/>
       </div>
     </DndProvider>
   );

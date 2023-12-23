@@ -6,6 +6,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 const chess = new Chess();
+const isMoveAllowed = true;
 
 const subjectGame = new BehaviorSubject()
 
@@ -26,7 +27,10 @@ export const move = (from, to, promotion = undefined) => {
 
 const updateGame = () => {
     const isGameOver = chess.isGameOver();
+    const progress = calculateProgress();
+
     subjectGame.next({ chess: chess.board(), isGameOver, result: isGameOver ? getGameResult() : null })
+
     if (isGameOver) {
         subjectGame.complete();
     }
@@ -58,13 +62,14 @@ const getGameResult = () => {
     }
 }
 
-
 const ChessGame = () => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         const subscription = subjectGame.subscribe((game) => {
-            setProgress(game.progress);
+            if (game && game.progress !== undefined) {
+                setProgress(game.progress);
+            }
         });
 
         return () => {
@@ -74,13 +79,13 @@ const ChessGame = () => {
 
     return (
         <div>
-            <ProgressBar now={progress} label={`${progress}%`} />
+            <ProgressBar now={progress} label={`${progress || 0}%`} />
         </div>
     );
 };
 
 
-export { subjectGame, ChessGame };
+export { subjectGame, ChessGame, chess, isMoveAllowed };
 
 
 
