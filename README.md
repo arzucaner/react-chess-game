@@ -6,22 +6,20 @@ This project was developed within the framework of the Christmas Coding Challeng
 
 ## Features
 
-
 - **Drag and Drop Chess Pieces:** Enjoy a seamless chess-playing experience with the intuitive drag-and-drop feature for moving chess pieces.
 - **Determine the Winning Team:** The game automatically identifies the winning team and announces the victorious side.
 - **Congratulations Message:** Celebrate success! A congratulatory message is displayed for the winning team, adding a delightful touch to the gaming experience.
 
 ## Used Technologies:
 
-
 - React
 - React DnD (Drag and Drop)
 - RxJS
 - Chessboard.js
 - HTML5
+- Chess.js
 
 ## Getting Started
-
 
 1. Clone the repository:
 
@@ -43,7 +41,6 @@ This project was developed within the framework of the Christmas Coding Challeng
 ## Contributing
 
 Feel free to contribute to the project. Just fork the repository, make your changes, and submit a pull request!
-
 
 ## License
 
