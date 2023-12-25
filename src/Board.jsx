@@ -4,11 +4,11 @@ import Square from './Square';
 
   const Board = ({ board }) => {
 
-    //const [gameState, setGameState] = useState({
-      //currentPlayer: 'white',
-      //moveCount: 0,
-      //gameStatus: 'in-progress',
-    //});
+    const [gameState, setGameState] = useState({
+      currentPlayer: 'white',
+      moveCount: 0,
+      gameStatus: 'in-progress',
+    });
 
     const colorCntrl = (i) => {
       const x = i % 8;
@@ -23,13 +23,13 @@ import Square from './Square';
       return `${letters}${y + 1}`;
     };
 
-    //const handleSquareClick = (position) => {
-      //setGameState((prevState) => ({
-        //...prevState,
-        //moveCount: prevState.moveCount + 1,
-        //currentPlayer: prevState.currentPlayer === 'white' ? 'black' : 'white',
-      //}));
-   // };
+    const handleSquareClick = (position) => {
+      setGameState((prevState) => ({
+        ...prevState,
+        moveCount: prevState.moveCount + 1,
+        currentPlayer: prevState.currentPlayer === 'white' ? 'black' : 'white',
+      }));
+   };
 
     return (
       <div className='w-[640px] h-[640px] bg-red-700 flex flex-wrap'>

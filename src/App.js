@@ -1,15 +1,18 @@
+
+import React, {useEffect, useState} from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import Board from './Board';
 import { subjectGame, ChessGame, initGame } from './Game';
 import { useEffect, useState } from 'react';
+
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [board, setBoard] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
-  //const [result, setResult] = useState(null);
-  //const [isLoading, setIsLoading] = useState(true);
+  const [result, setResult] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleStartGame = () => {
     setIsLoading(true);
@@ -44,7 +47,7 @@ function App() {
         )}
         {!isLoading && <Board board={board} />}
         {!isLoading && !isGameOver && (
-          <button onClick={handleStartGame}>Start New Game</button>
+          <button onClick={handleStartGame}>Start New Game</button>             
         )}
         <ChessGame /> 
       </div>

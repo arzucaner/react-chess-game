@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-//import { Chess } from 'chess.js';
+import { Chess } from 'chess.js';
 import { BehaviorSubject } from 'rxjs';
-//import ProgressBar from 'react-bootstrap/ProgressBar';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 
 const chess = new Chess();
-//const isMoveAllowed = true;
+const isMoveAllowed = true;
 
 const subjectGame = new BehaviorSubject()
 

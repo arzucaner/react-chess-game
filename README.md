@@ -2,6 +2,12 @@
 
 This project was developed within the framework of the Christmas Coding Challenge 2023, organized by Who Women Code London. Dive into the world of React Chess Game,  a digital battleground where strategic moves meet online competition. Challenge friends or make new opponents worldwide, and let the games begin!
 
+Chess Game is a classic strategy game played between two players. The objective of the game is to checkmate the opponent's king.
+
+- When it's your turn, move your pieces. Movement rules vary depending on the type of piece.
+- Checkmate occurs when the opponent's king is under threat, and there is no escape route. To win the game, you must checkmate the opponent's king.
+- During the game, be mindful of checkmate, check, and draw situations. For more information about the rules, please consult the official chess rules.
+
 ![1702846327770](image/README/1702846327770.png)
 
 ## Features

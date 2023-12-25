@@ -11,7 +11,6 @@ const SquareBoard = ({ brd, positionCntrl }) => {
     },
   });
 
-  // eslint-disable-next-line no-unused-vars
 
   const pieceImage = require(`../public/assets/images/${brd.type}_${brd.color}.png`);
   console.log("brd", brd);

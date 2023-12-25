@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
-//import subjectGame, { initGame, resetGame, move } from './Game';
-//import { chess, isMoveAllowed } from './Game';
+import subjectGame, { initGame, resetGame, move } from './Game';
+import { chess, isMoveAllowed } from './Game';
 
 const Square = ({ children, colorValue, positionCntrl }) => {
   //console.log(positionCntrl, "positionCntrl")
@@ -10,10 +10,10 @@ const Square = ({ children, colorValue, positionCntrl }) => {
     drop: (item) => {
       const [fromPosition] = item.id.split('_')
       move(fromPosition, positionCntrl)
-      //const isAllowed = isMoveValid(fromPosition, positionCntrl);
+      const isAllowed = isMoveValid(fromPosition, positionCntrl);
 
-      //if (isAllowed) {
-       // move(fromPosition, positionCntrl);
+      if (isAllowed) {
+        move(fromPosition, positionCntrl);
       }
     },
   });
